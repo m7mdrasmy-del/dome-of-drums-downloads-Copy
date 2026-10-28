@@ -1,0 +1,66 @@
+# Pages CMS editor for Dome of Drums — https://app.pagescms.org
+media:
+  - name: images
+    label: Site Images
+    input: assets/images
+    output: /assets/images
+    extensions: [png, jpg, jpeg, webp, svg]
+
+content:
+  - name: studio_settings
+    label: Dome of Drums — Site Settings
+    type: file
+    path: assets/data/dod-site-settings.json
+    format: json
+    fields:
+      - name: license_price_usd
+        label: Studio license price (USD)
+        type: number
+        required: true
+        options:
+          min: 0
+      - name: available_licenses
+        label: Remaining founding licenses
+        type: number
+        required: true
+        options:
+          min: 0
+      - name: launch_license_total
+        label: Total founding licenses
+        type: number
+        required: true
+        options:
+          min: 1
+      - name: studio_heading_en
+        label: Homepage heading — English
+        type: string
+      - name: studio_heading_ar
+        label: Homepage heading — Arabic
+        type: string
+      - name: studio_description_en
+        label: Homepage description — English
+        type: text
+      - name: studio_description_ar
+        label: Homepage description — Arabic
+        type: text
+      - name: pricing_heading_en
+        label: Pricing heading — English
+        type: string
+      - name: pricing_heading_ar
+        label: Pricing heading — Arabic
+        type: string
+      - name: accent_color
+        label: Primary accent color (hex)
+        type: string
+        pattern: "^#[0-9a-fA-F]{6}$"
+        description: "Example: #D96F2B"
+      - name: dark_green_color
+        label: Main green color (hex)
+        type: string
+        pattern: "^#[0-9a-fA-F]{6}$"
+        description: "Example: #46513A"
+      - name: first_studio_image
+        label: First Studio slideshow image
+        type: image
+        options:
+          media: images
