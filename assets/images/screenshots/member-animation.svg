@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700">
+<rect width="1000" height="700" fill="#171b15"/>
+<text x="70" y="72" fill="#9EAA75" font-family="Consolas,monospace" font-size="18" letter-spacing="3">MEMBER ANIMATION</text>
+<text x="70" y="118" fill="#F4F1E8" font-family="Arial,sans-serif" font-weight="700" font-size="34">Motion presentation &amp; playback</text>
+<g transform="translate(70 180)">
+  <rect x="0" y="0" width="860" height="330" rx="18" fill="#1D211B" stroke="#46513A"/>
+  <g stroke="#C7A06E" stroke-width="18" stroke-linecap="square" fill="none">
+    <path d="M145 245 L250 72 L355 245 Z"/><path d="M250 72 L460 72 L565 245 L355 245"/><path d="M460 72 L670 245 L565 245"/>
+  </g>
+  <g stroke="#E57C33" stroke-width="6" fill="none" opacity=".95"><path d="M120 280 C250 315 470 315 720 260" stroke-dasharray="14 12"/><path d="M710 248 l28 7 -18 23"/></g>
+  <g transform="translate(78 285)" font-family="Consolas,monospace" font-size="14" font-weight="700">
+    <rect x="0" y="0" width="704" height="42" rx="8" fill="#151813" stroke="#46513A"/>
+    <text x="18" y="26" fill="#9EAA75">START</text><text x="310" y="26" fill="#E57C33">MOTION</text><text x="625" y="26" fill="#9EAA75">RETURN</text>
+    <line x1="100" y1="21" x2="590" y2="21" stroke="#66724C" stroke-width="3"/><circle cx="365" cy="21" r="8" fill="#E57C33"/>
+  </g>
+</g>
+<g transform="translate(70 560)" font-family="Consolas,monospace" font-size="15">
+  <rect width="148" height="48" rx="9" fill="#E57C33"/><text x="48" y="30" fill="#171913" font-weight="800">▶ PLAY</text>
+  <rect x="162" width="148" height="48" rx="9" fill="#1D211B" stroke="#66724C"/><text x="198" y="30" fill="#F4F1E8" font-weight="700">PING-PONG</text>
+  <rect x="324" width="148" height="48" rx="9" fill="#1D211B" stroke="#66724C"/><text x="361" y="30" fill="#F4F1E8" font-weight="700">SPEED</text>
+</g>
+<text x="70" y="652" fill="#B8B8AC" font-family="Arial,sans-serif" font-size="17">Presentation tool · member motion · playback controls</text>
+</svg>
