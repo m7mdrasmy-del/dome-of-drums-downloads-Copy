@@ -1,0 +1,10 @@
+Dome of Drums Studio · Shared installer
+
+Place the official installable RBZ here as:
+  dome-of-drums-installer.rbz
+
+The Limited and Full Edition download buttons automatically detect this file.
+The full feature set is controlled by activation, not by a separate downloaded file.
+
+IMPORTANT: only publish the package approved for public distribution.
+Cloudflare Pages Direct Upload requires a NEW deployment to update a file.
