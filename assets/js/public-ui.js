@@ -116,3 +116,74 @@
     document.querySelectorAll('.lang-toggle').forEach(b=>b.addEventListener('click',()=>setTimeout(()=>{refreshContacts();verifyTrial()},0)));
   });
 })();
+
+
+/* DoD | Pages CMS bridge — safe text/color overrides, original site stays intact. */
+(function () {
+  'use strict';
+  var endpoint = '/assets/data/dod-site-settings.json';
+  function validHex(s) { return typeof s === 'string' && /^#[\da-fA-F]{6}$/.test(s); }
+  function escapeHTML(s) {
+    var temp = document.createElement('span');
+    temp.textContent = s;
+    return temp.innerHTML;
+  }
+  function plainText(html) {
+    var temp = document.createElement('span');
+    temp.innerHTML = html;
+    return temp.textContent.trim();
+  }
+  function setLocalized(el, en, ar) {
+    if (!el) return;
+    var lang = document.documentElement.lang === 'ar' ? 'ar' : 'en';
+    [['en',en],['ar',ar]].forEach(function (entry) {
+      var code = entry[0], value = entry[1];
+      if (typeof value !== 'string' || !value.trim()) return;
+      var old = el.getAttribute('data-' + code) || '';
+      if (old && plainText(old) === value.trim()) return; // preserve original italics when unchanged
+      el.setAttribute('data-' + code, escapeHTML(value.trim()));
+      if (lang === code) el.textContent = value.trim();
+    });
+  }
+  function setPrice(el, prefix, n) {
+    if (!el || !Number.isFinite(n) || n < 0) return;
+    var nodes = Array.from(el.childNodes);
+    var text = nodes.find(function(node) { return node.nodeType === 3; });
+    if (!text) { text = document.createTextNode(''); el.appendChild(text); }
+    text.textContent = prefix + n.toLocaleString('en-US') + ' ';
+  }
+  function setRemaining(el, remaining, total) {
+    if (!el || !Number.isInteger(remaining) || !Number.isInteger(total) || total < 1 || remaining < 0) return;
+    var en = remaining + ' OF THE FIRST ' + total + ' LICENSES REMAIN';
+    var ar = 'متبقي ' + remaining + ' من أول ' + total + ' رخصة';
+    // Availability counts are plain text. Keep the page's language-switching attributes intact.
+    el.setAttribute('data-en',en); el.setAttribute('data-ar',ar);
+    el.textContent = document.documentElement.lang === 'ar' ? ar : en;
+  }
+  function apply(s) {
+    if (!s || typeof s !== 'object') return;
+    if (validHex(s.accent_color)) document.documentElement.style.setProperty('--orange',s.accent_color);
+    if (validHex(s.dark_green_color)) document.documentElement.style.setProperty('--deep',s.dark_green_color);
+    var price = Number(s.license_price_usd);
+    if (s.license_price_usd !== '' && s.license_price_usd !== null && Number.isFinite(price) && price >= 0) {
+      setPrice(document.querySelector('.dod-v23-launch-price'),' ',price); // keep existing $ span
+      setPrice(document.querySelector('.dod-v23-install-amount'),'$',price);
+    }
+    setRemaining(document.querySelector('.dod-v23-install-left'), Number(s.available_licenses), Number(s.launch_license_total));
+    setLocalized(document.querySelector('.v7-hero-copy h1'), s.studio_heading_en, s.studio_heading_ar);
+    setLocalized(document.querySelector('.v7-hero-copy > p'), s.studio_description_en, s.studio_description_ar);
+    setLocalized(document.querySelector('h1[data-en="Founding Launch Offer"]'), s.pricing_heading_en, s.pricing_heading_ar);
+    if (typeof s.first_studio_image === 'string' && /^\/assets\/images\/[\w./-]+\.(?:png|jpe?g|webp|svg)$/i.test(s.first_studio_image) && !s.first_studio_image.includes('..')) {
+      var img = document.querySelector('.v7-hero-slider .v7-slide:first-child img');
+      if (img) img.src = s.first_studio_image;
+    }
+  }
+  function start() {
+    fetch(endpoint, {cache:'no-store'})
+      .then(function(response){ if (!response.ok) throw new Error('No site settings'); return response.json(); })
+      .then(apply)
+      .catch(function(){ /* Site still renders from its original HTML if CMS config is missing. */ });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
+})();

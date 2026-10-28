@@ -1,0 +1,14 @@
+{
+  "license_price_usd": 600,
+  "available_licenses": 14,
+  "launch_license_total": 20,
+  "studio_heading_en": "Design the structure. Resolve the parts. Build it.",
+  "studio_heading_ar": "صمّم المنشأة. حلّ تفاصيل القطع. ثم ابنِها.",
+  "studio_description_en": "A fabrication-focused SketchUp extension for domes, gridshells, tunnels and related structures — from parametric geometry to physical members, connections, covers and workshop-ready information.",
+  "studio_description_ar": "إضافة SketchUp موجهة للتصنيع للقباب والشبكات القشرية والأنفاق والمنشآت المرتبطة بها — من الهندسة البارامترية إلى الممبرز الفيزيائية والوصلات والأغطية ومعلومات الورشة.",
+  "pricing_heading_en": "Founding Launch Offer",
+  "pricing_heading_ar": "عرض الإطلاق للمؤسسين",
+  "accent_color": "#D96F2B",
+  "dark_green_color": "#46513A",
+  "first_studio_image": "/assets/images/screenshots/zome-shape-interface.webp"
+}
