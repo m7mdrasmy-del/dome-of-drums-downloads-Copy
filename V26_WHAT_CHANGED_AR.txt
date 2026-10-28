@@ -1,0 +1,10 @@
+Dome of Drums · V26
+
+- أرفق ملف الإضافة كما أرسله المستخدم: Dome_of_Drums_V108_8_LITE_FOR_ENCRYPTION(1).rbz.
+- التنزيل يعمل مباشرة من زر SPECIAL LAUNCH OFFER وزر Download في صفحة التحميل.
+- رابط الملف على Cloudflare: /downloads/dome-of-drums-installer.rbz
+- إخفاء روابط Shelter واستبدالها بوسم Coming Soon دون إمكانية الضغط.
+- استبدال صفحات Shelter غير الجاهزة بصفحة Coming Soon فقط.
+- لا يتضمن النشر صفحات تفاصيل المبادرة حتى تصبح جاهزة.
+- لتحديث الإضافة لاحقًا، استبدل الملف /downloads/dome-of-drums-installer.rbz بالملف الجديد وارفع ZIP جديد كـ Production deployment.
+- مهم: الملف المرفق هو LITE وليس FULL، كما يظهر من اسم ملف المصدر؛ لم نعدل محتواه.

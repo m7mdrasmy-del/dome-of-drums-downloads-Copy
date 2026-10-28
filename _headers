@@ -1,0 +1,4 @@
+/downloads/*.rbz
+  Content-Type: application/octet-stream
+  Content-Disposition: attachment
+  X-Content-Type-Options: nosniff

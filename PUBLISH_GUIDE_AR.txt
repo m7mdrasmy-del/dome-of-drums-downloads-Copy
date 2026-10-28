@@ -1,0 +1,10 @@
+دليل نشر Dome of Drums — V22
+
+1) في لوحة Cloudflare: Workers & Pages > dome-of-drums > Deployments > Create deployment > Production.
+2) ارفع ملف dome-of-drums-cloudflare-v22.zip كاملًا دون فك ضغطه.
+3) بعد النشر اختبر: /studio/ و /studio/download/ و /contact/.
+4) ملف التثبيت الحالي غير مرفق: يجب أن يكون اسمه dome-of-drums-installer.rbz داخل downloads/.
+5) عندما تضع ملف RBZ الرسمي المسموح بنشره للعامة، ارفع ZIP كاملًا في Deployment جديد. ستعمل زرا النسخة المحدودة والكاملة تلقائيًا بالملف ذاته.
+6) النسخة الكاملة تحتاج كود تفعيل من الفريق. الدفع USDT أو PayPal فقط عبر التواصل الرسمي.
+7) الفيديو من Facebook عبر video.php في إطار 16:9، وإذا منع Facebook تشغيله داخل الموقع يوجد رابط لفتحه مباشرة.
+8) لا تنشر بيانات الرخص أو مفاتيح التفعيل أو أي أسرار ضمن الموقع.
